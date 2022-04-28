@@ -1,12 +1,18 @@
+# Plywood Gallery shared parameter
 project_name: Plywood Gallery - Minimal Example
-repository_url: https://github.com/kolibril13/plywood-gallery-minimal-example
 user_content_version: 1.22.3
 description: |
   Normal cells are independent of each other, and can be run togehter with the "Header" cell. <br>
   A "Dependent" cell depends on the "Normal" cell left to it. <br>
   A "Dependent" cell depends on another "Dependent" cell left to it.
-favicon: favicon.ico
+favicon: plywood_icon.png # this is an icon with the resolution 32x32 pixel that will be shown in the task bar.
+gallery_parameters_path: gallery_assets/gallery_parameters.json
+
+# Webpage only parameter
 custom_footer: |
   <div style="position: fixed; bottom: 10px; right:10px"> <a href="https://github.com/kolibril13/plywood-gallery">
   Link to the original plywood core repo.</a></div>
-gallery_parameters_path: gallery_assets/gallery_parameters.json
+repository_url: https://github.com/kolibril13/plywood-gallery-minimal-example
+
+# Extension only parameter
+preview_image: thumbnail.png # this is an icon with the resolution of at least 300x300 pixel that will be shown in the gallery explorer. 
