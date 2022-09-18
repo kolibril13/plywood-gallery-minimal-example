@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/default.min.css">
+
+    <style>
+        h1 {
+            margin-bottom: 0;
+            margin-top: 0
+        }
+
+        h2 {
+            margin-bottom: 0;
+            margin-top: 0
+        }
+
+        p {
+            margin-bottom: 0;
+            margin-top: 0
+        }
+
+        .box {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+
+        .box2 {
+            position: absolute;
+            top: 45px;
+            right: 5px;
+        }
+
+        /* basic positioning */
+
+        .legend {
+            list-style: none;
+        }
+
+        .legend li {
+            float: left;
+            margin-right: 10px;
+        }
+
+        .legend span {
+            border-radius: 4px;
+            float: left;
+            width: 12px;
+            height: 12px;
+            margin: 2px;
+        }
+
+        /* your colors */
+
+        .legend .label1 {
+            background-color: #ED6A5A;
+        }
+
+        .legend .label2 {
+            background-color: #007AB8;
+        }
+
+        .legend .label3 {
+            background-color: #A8DCF0;
+        }
+
+        button {
+            border-radius: 4px;
+            background-color: lightgrey;
+            height: 18px;
+            width: 18px;
+            padding: 0px;
+            z-index: 400;
+            border-width: 0;
+        }
+
+        button:hover {
+            opacity: 0.6;
+        }
+
+        .div1 {
+            width: 500px;
+            height: 150px;
+            border: 0;
+            font-size: 10px;
+            position: sticky;
+            top: 0;
+        }
+
+        .block2 {
+            position: absolute;
+            top: 17px;
+            /*TODO button position should not be hard coded*/
+            right: -14px;
+            z-index: 400;
+
+        }
+
+        .python {
+            border-radius: 8px;
+            position: relative;
+            z-index: 100;
+            width: 500px;
+        }
+
+        .gallery_entry {
+            opacity: 1;
+            display: inline-block;
+            width: 80px;
+            height: auto;
+            margin: 1px;
+            transition: .1s ease;
+            backface-visibility: hidden;
+            border-radius: 8px;
+        }
+
+        .gallery_entry:hover {
+            opacity: 0.7;
+        }
+    </style>
+    <title>Plywood Gallery - Minimal Example</title>
+    <link rel="icon" type="image/x-icon" href="plywood_icon.png">
+    <!-- the original plywood icon is dedicated to the Marble Machine X by Wintergatan https://youtu.be/JgM2ruB8M34?t=614 -->
+
+</head>
+
+<body style="background-color:#ece6e2;">
+    <!-- https://github.com/kolibril13/plywood-gallery-minimal-example -->
+
+    <!-- <b> Info: </b>
+Normal cells are independent of each other, and can be run togehter with the "Header" cell. <br>
+A "Dependent" cell depends on the "Normal" cell left to it. <br>
+A "Dependent" cell depends on another "Dependent" cell left to it. -->
+
+
+
+    <div class="box">
+        <p style="opacity: 0.8;"></p> <tt>user content v1.22.3 </tt><br>
+        <p style="opacity: 0.4;"> <tt> plywood core v0.0.5 </tt> </p>
+    </div>
+
+
+    <div class="box2">
+        <ul class="legend">
+            <li><span class="label1"></span> Header</li>
+            <br>
+            <li><span class="label2"></span> Normal</li>
+            <br>
+            <li><span class="label3"></span> Dependent</li>
+            <br>
+        </ul>
+    </div>
+
+    <div style="position: fixed; bottom: 10px; right:10px"> <a href="https://github.com/kolibril13/plywood-gallery">
+            Link to the original plywood core repo.</a></div>
+
+
+</body>
+
+</html>
