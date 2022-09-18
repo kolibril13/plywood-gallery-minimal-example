@@ -4,8 +4,33 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/default.min.css">
+    <script src="https://kit.fontawesome.com/fd8b485006.js" crossorigin="anonymous"></script>
+    <!-- custom kit from Jan-Hendrik Müller -->
 
     <style>
+        a:link {
+            color: black;
+            background-color: transparent;
+            text-decoration: none;
+        }
+
+        a:visited {
+            color: black;
+            background-color: transparent;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: grey;
+            background-color: transparent;
+            text-decoration: underline;
+        }
+
+        a:active {
+            color: blue;
+            background-color: transparent;
+            text-decoration: underline;
+        }
 
         .box {
             position: absolute;
@@ -65,6 +90,7 @@
 </head>
 
 <body style="background-color:#ece6e2;">
+    Hello <i class="fa-solid fa-circle-info"></i>
     <!-- https://github.com/kolibril13/plywood-gallery-minimal-example -->
 
     <!-- <b> Info: </b>
@@ -89,10 +115,28 @@ A "Dependent" cell depends on another "Dependent" cell left to it. -->
             <li><span class="label3"></span> Dependent</li>
             <br>
         </ul>
+
+        <ul class="legend">
+            <a title="Link to GitHub" href="https://github.com/kolibril13/mobject-gallery"><i class="fa fa-github"
+                    class="tooltip" style='font-size:36px;'></i></a>
+        </ul>
+
+
+        <ul class="legend">
+            <a title="Link to GitHub" href="https://github.com/kolibril13/mobject-gallery"><i
+                    class="fa-solid fa-circle-info" class="tooltip" style='font-size:36px;'></i></a>
+        </ul>
+
+
+
+        <!-- <i class="fa-solid fa-circle-info"></i> -->
+
+
     </div>
 
     <div style="position: fixed; bottom: 10px; right:10px"> <a href="https://github.com/kolibril13/plywood-gallery">
             Link to the original plywood core repo.</a></div>
+
 
 
 </body>
