@@ -4,20 +4,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/default.min.css">
-    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script>
-    <script>
-        hljs.highlightAll();
-        function display_code_from_gallery_cell(imgs) {
-            var name = imgs.dataset.code;
-            document.getElementById("info_field").innerHTML = name
-            hljs.highlightAll();
-        }
-        // rest the code content block to an empty paragraph 
-        function reset_content(imgs) {
-            document.getElementById("info_field").innerHTML = "<p> <br></p>" //maybe better solution possible?
-            hljs.highlightAll();
-        }
-    </script>
+
     <style>
         h1 {
             margin-bottom: 0;
@@ -140,33 +127,14 @@
 </head>
 
 <body style="background-color:#ece6e2;">
-    <div style="text-align:center">
-        <h2>Plywood Gallery - Minimal Example</h2>
-        Repo: <a
-            href=" https://github.com/kolibril13/plywood-gallery-minimal-example">https://github.com/kolibril13/plywood-gallery-minimal-example</a>
-    </div>
-    <div> <small>
-            <br>
-            <b> Info: </b>
-            Normal cells are independent of each other, and can be run togehter with the "Header" cell. <br>
-            A "Dependent" cell depends on the "Normal" cell left to it. <br>
-            A "Dependent" cell depends on another "Dependent" cell left to it.
+    <!-- https://github.com/kolibril13/plywood-gallery-minimal-example -->
 
-            <br>
-        </small>
-    </div>
+    <!-- <b> Info: </b>
+Normal cells are independent of each other, and can be run togehter with the "Header" cell. <br>
+A "Dependent" cell depends on the "Normal" cell left to it. <br>
+A "Dependent" cell depends on another "Dependent" cell left to it. -->
 
-    <div class="div1">
 
-        <!-- maybe better html indention possible for this pre block?  -->
-        <pre>
-<b style="background-color:#ece6e2; ">Here is the corresponding code:</b>
-<code class="python" id="info_field"> <br> </code>
-</pre> <!-- better naming of these divs here-->
-        <div class='block2'>
-            <button type="button" onclick="reset_content(this)">X</button>
-        </div>
-    </div>
 
     <div class="box">
         <p style="opacity: 0.8;"></p> <tt>user content v1.22.3 </tt><br>
