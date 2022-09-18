@@ -38,6 +38,18 @@
             right: 10px;
         }
 
+        .githublink {
+            position: absolute;
+            top: 13px;
+            right: 177px;
+        }
+
+        .infologo {
+            position: absolute;
+            top: 70px;
+            right: 177px;
+        }
+
         .box p {
             margin-bottom: 0;
             margin-top: 0
@@ -92,13 +104,17 @@
 <body style="background-color:#ece6e2;">
     Hello <i class="fa-solid fa-circle-info"></i>
 
-    <a title="Link to GitHub" href="https://github.com/kolibril13/plywood-gallery-minimal-example"><i
-            class="fa fa-github" class="tooltip" style='font-size:36px;'></i></a>
+    <div class="githublink">
+        <a title="Link to GitHub" href="https://github.com/kolibril13/plywood-gallery-minimal-example"><i
+                class="fa fa-github" class="tooltip" style='font-size:36px;'></i></a>
+    </div>
 
 
     <!-- TODO: das soll kein Link sein  -->
-    <a title="Info about Plywood" href=""><i class="fa-solid fa-circle-info" class="tooltip"
-            style='font-size:36px;'></i></a>
+    <div class="infologo">
+        <a title="Info about Plywood" href=""><i class="fa-solid fa-circle-info" class="tooltip"
+                style='font-size:36px;'></i></a>
+    </div>
 
 
     <!-- TODO: Das soll in die Info Hoverbox  -->
