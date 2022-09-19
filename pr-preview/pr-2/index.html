@@ -99,13 +99,13 @@
             margin-top: 4px;
         }
 
-        .tooltip {
+        .container_info .tooltip {
             position: relative;
             display: inline-block;
         }
 
 
-        .tooltip .tooltiptext {
+        .container_info .tooltip .tooltiptext {
             visibility: hidden;
             font-size: small;
             width: 500px;
@@ -120,11 +120,11 @@
             left: 100%;
             margin-left: -350px;
             border: 2px solid;
-
         }
 
+        /* TODO: The Tooltip has to be refectored*/
         /* this is the arrow  */
-        .tooltip .tooltiptext::after {
+        .container_info .tooltip .tooltiptext::after {
             content: "";
             position: absolute;
             bottom: 100%;
@@ -136,7 +136,7 @@
             border-color: transparent transparent black transparent;
         }
 
-        .tooltip:hover .tooltiptext {
+        .container_info .tooltip:hover .tooltiptext {
             visibility: visible;
         }
 
@@ -157,17 +157,24 @@
         <table>
             <tr>
                 <td class="info_github_icon">
-                    <div class="githublink">
-                        <a title="This Gallery on GitHub"
-                            href="https://github.com/kolibril13/plywood-gallery-minimal-example"><i class="fa fa-github"
-                                class="tooltip"></i></a>
+                    <div class="tooltip">
+                        <div class="githublink">
+                            <i class="fa fa-github"></i>
+                        </div>
+                        <!-- TODO: This tooltip needs to be adjusted in a better way, should not be hard-coded! -->
+                        <div class="tooltiptext" style="padding:5px; width: 160px; margin-left:-130px">
+                            Links to GitHub repos on the right.
+                        </div>
                     </div>
                 </td>
                 <td class="info_version">
-                    <p style="opacity: 0.8;">user content v1.22.3 <br></p>
+                    <p style="opacity: 0.8;"> <a title="Plywood Core at GitHub"
+                            href="https://github.com/kolibril13/plywood-gallery-minimal-example"><span
+                                class="tooltip">user content v1.22.3</span></a><br></p>
+
                     <p style="opacity: 0.4;"> <a title="Plywood Core at GitHub"
-                            href="https://github.com/kolibril13/plywood-gallery"><span class="tooltip">plywood core
-                                v0.0.5</span></a></p>
+                            href="https://github.com/kolibril13/plywood-gallery"><span class="tooltip">
+                                plywood core v0.0.5</span></a></p>
                 </td>
             </tr>
             <tr>
@@ -192,7 +199,6 @@
 
                         </div>
                     </div>
-
                 </td>
                 <td>
                     <div class="info_legend">
