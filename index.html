@@ -33,29 +33,43 @@
             margin-top: 2.5px;
         }
 
+        .container_info .info_version a {
+            color: black;
+            text-decoration: none;
+        }
+
+        .container_info .info_version a:hover {
+            color: blue;
+            opacity: 0.8;
+        }
+
+
+
+
+
         .container_info .info_info_icon {
             font-size: 36px
         }
 
-        .container_info a:link {
+        .container_info .githublink a:link {
             color: black;
             background-color: transparent;
             text-decoration: none;
         }
 
-        .container_info a:visited {
+        .container_info .githublink a:visited {
             color: black;
             background-color: transparent;
             text-decoration: none;
         }
 
-        .container_info a:hover {
+        .container_info .githublink a:hover {
             color: grey;
             background-color: transparent;
             text-decoration: underline;
         }
 
-        .container_info a:active {
+        .container_info .githublink a:active {
             color: blue;
             background-color: transparent;
             text-decoration: underline;
@@ -91,9 +105,9 @@
             border: 1px solid rgba(255, 0, 0, .3);
         } */
     </style>
-     <title>Plywood Gallery - Minimal Example</title>
-     <link rel="icon" type="image/x-icon" href="plywood_icon.png">
-     <!-- the original plywood icon is dedicated to the Marble Machine X by Wintergatan https://youtu.be/JgM2ruB8M34?t=614 -->
+    <title>Plywood Gallery - Minimal Example</title>
+    <link rel="icon" type="image/x-icon" href="plywood_icon.png">
+    <!-- the original plywood icon is dedicated to the Marble Machine X by Wintergatan https://youtu.be/JgM2ruB8M34?t=614 -->
 </head>
 
 <body style="background-color:#ece6e2;">
@@ -103,15 +117,16 @@
             <tr>
                 <td class="info_github_icon">
                     <div class="githublink">
-                        <a title="Link to GitHub"
+                        <a title="This Gallery on GitHub"
                             href="https://github.com/kolibril13/plywood-gallery-minimal-example"><i class="fa fa-github"
                                 class="tooltip"></i></a>
                     </div>
-
                 </td>
                 <td class="info_version">
                     <p style="opacity: 0.8;">user content v1.22.3 <br></p>
-                    <p style="opacity: 0.4;">plywood core v0.0.5</p>
+                    <p style="opacity: 0.4;"> <a title="Plywood Core at GitHub"
+                            href="https://github.com/kolibril13/plywood-gallery"><span class="tooltip">plywood core
+                                v0.0.5</span></a></p>
                 </td>
             </tr>
             <tr>
@@ -126,17 +141,14 @@
                         <ul class='legend-labels'>
                             <li><span style='background:#ED6A5A;'></span>Header</li>
                             <li><span style='background:#007AB8;'></span>Normal</li>
-                            <li><span style='background:#A8DCF0;'></span>Dependend</li>
+                            <li><span style='background:#A8DCF0;'></span>Dependent</li>
                         </ul>
                     </div>
 
                 </td>
             </tr>
         </table>
-
     </div>
-    <div style="position: fixed; bottom: 10px; right:10px"> <a href="https://github.com/kolibril13/plywood-gallery">
-        Link to the original plywood core repo.</a></div>
 </body>
 
 </html>
