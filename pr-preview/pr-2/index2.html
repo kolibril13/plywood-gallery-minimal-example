@@ -55,7 +55,6 @@
 
         .info_legend ul {
             margin: 0;
-            margin-bottom: 0px;
             padding: 0;
             float: left;
             list-style: none;
@@ -70,30 +69,31 @@
         }
 
         .info_legend .legend-labels span {
-            display: block;
             float: left;
-            height: 16px;
+            height: 10px;
             width: 30px;
-            margin-right: 3px;
+            /* IMPORTANT spacing on the right */
+            margin-right: 5px;
             margin-left: 3px;
-            /* border: 1px solid #999; */
             border-radius: 4px;
+            /* margin-top must be  (info_legend ul li line-height - .info_legend .legend-labels span height) /2  */
+            margin-top: 4px; 
         }
 
-        /* table,
+        table,
         th,
         td {
-            border: 1px solid rgba(255, 0, 0, .5);
-        } */
-
-        table {
-            border-spacing: 20px 20px;
+            border: 1px solid rgba(255, 0, 0, .3);
         }
 
+        table {
+            border-spacing: 10px 20px;
+            font-family: monospace
+        }
 
         .info_version p {
-            margin-bottom: 0;
-            margin-top: 0
+            margin-bottom: 2.5px;
+            margin-top: 2.5px;
         }
     </style>
 </head>
@@ -112,8 +112,8 @@
 
                 </td>
                 <td class="info_version">
-                    <p style="opacity: 0.8; font-family:monospace">user content v1.22.3<br></p>
-                    <p style="opacity: 0.4;"> <tt> plywood core v0.0.5 </tt> </p>
+                    <p style="opacity: 0.8;">user content v1.22.3 <br></p>
+                    <p style="opacity: 0.4;">plywood core v0.0.5</p>
                 </td>
             </tr>
             <tr>
@@ -123,12 +123,14 @@
                                 style='font-size:36px;'></i></a>
                     </div>
                 </td>
-                <td class="info_legend">
-                    <ul class='legend-labels'>
-                        <li><span style='background:#ED6A5A;'></span>Header</li>
-                        <li><span style='background:#007AB8;'></span>Normal</li>
-                        <li><span style='background:#A8DCF0;'></span>Dependend</li>
-                    </ul>
+                <td>
+                    <div class="info_legend">
+                        <ul class='legend-labels'>
+                            <li><span style='background:#ED6A5A;'></span>Header</li>
+                            <li><span style='background:#007AB8;'></span>Normal</li>
+                            <li><span style='background:#A8DCF0;'></span>Dependend</li>
+                        </ul>
+                    </div>
 
                 </td>
             </tr>
