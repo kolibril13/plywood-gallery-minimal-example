@@ -1,148 +1,142 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/default.min.css">
     <script src="https://kit.fontawesome.com/fd8b485006.js" crossorigin="anonymous"></script>
-    <!-- custom kit from Jan-Hendrik Müller -->
 
     <style>
-        a:link {
+        .container_info {
+            position: absolute;
+            top: 0px;
+            right: -40px;
+            width: max-content;
+            width: 300px;
+            height: 200px;
+            /* border: 2px solid; */
+            border-color: grey;
+        }
+
+        .container_info table {
+
+            border-spacing: 10px 20px;
+            font-family: monospace
+        }
+
+        .container_info .info_github_icon {
+            font-size: 36px
+        }
+
+        .container_info .info_version p {
+            margin-bottom: 2.5px;
+            margin-top: 2.5px;
+        }
+
+        .container_info .info_info_icon {
+            font-size: 36px
+        }
+
+        .container_info a:link {
             color: black;
             background-color: transparent;
             text-decoration: none;
         }
 
-        a:visited {
+        .container_info a:visited {
             color: black;
             background-color: transparent;
             text-decoration: none;
         }
 
-        a:hover {
+        .container_info a:hover {
             color: grey;
             background-color: transparent;
             text-decoration: underline;
         }
 
-        a:active {
+        .container_info a:active {
             color: blue;
             background-color: transparent;
             text-decoration: underline;
         }
 
-        .box {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-        }
-
-        .githublink {
-            position: absolute;
-            top: 13px;
-            right: 177px;
-        }
-
-        .infologo {
-            position: absolute;
-            top: 70px;
-            right: 177px;
-        }
-
-        .box p {
-            margin-bottom: 0;
-            margin-top: 0
-        }
-
-
-        .box2 {
-            position: absolute;
-            top: 45px;
-            right: 5px;
-        }
-
-        /* basic positioning */
-
-        .legend {
+        .container_info .info_legend ul {
+            margin: 0;
+            padding: 0;
+            float: left;
             list-style: none;
         }
 
-        .legend li {
-            float: left;
-            margin-right: 10px;
+        .container_info .info_legend ul li {
+            margin-left: 0;
+            line-height: 18px;
         }
 
-        .legend span {
+        .container_info .info_legend .legend-labels span {
+            float: left;
+            height: 10px;
+            width: 30px;
+            /* IMPORTANT spacing on the right */
+            margin-right: 5px;
+            margin-left: 3px;
             border-radius: 4px;
-            float: left;
-            width: 12px;
-            height: 12px;
-            margin: 2px;
+            /* margin-top must be  (info_legend ul li line-height - .info_legend .legend-labels span height) /2  */
+            margin-top: 4px;
         }
 
-        /* your colors */
-
-        .legend .label1 {
-            background-color: #ED6A5A;
-        }
-
-        .legend .label2 {
-            background-color: #007AB8;
-        }
-
-        .legend .label3 {
-            background-color: #A8DCF0;
-        }
+        /* .container_info table,
+        th,
+        td {
+            border: 1px solid rgba(255, 0, 0, .3);
+        } */
     </style>
-    <title>Plywood Gallery - Minimal Example</title>
-    <link rel="icon" type="image/x-icon" href="plywood_icon.png">
-    <!-- the original plywood icon is dedicated to the Marble Machine X by Wintergatan https://youtu.be/JgM2ruB8M34?t=614 -->
-
+     <title>Plywood Gallery - Minimal Example</title>
+     <link rel="icon" type="image/x-icon" href="plywood_icon.png">
+     <!-- the original plywood icon is dedicated to the Marble Machine X by Wintergatan https://youtu.be/JgM2ruB8M34?t=614 -->
 </head>
 
 <body style="background-color:#ece6e2;">
-    Hello <i class="fa-solid fa-circle-info"></i>
 
-    <div class="githublink">
-        <a title="Link to GitHub" href="https://github.com/kolibril13/plywood-gallery-minimal-example"><i
-                class="fa fa-github" class="tooltip" style='font-size:36px;'></i></a>
+    <div class="container_info">
+        <table>
+            <tr>
+                <td class="info_github_icon">
+                    <div class="githublink">
+                        <a title="Link to GitHub"
+                            href="https://github.com/kolibril13/plywood-gallery-minimal-example"><i class="fa fa-github"
+                                class="tooltip"></i></a>
+                    </div>
+
+                </td>
+                <td class="info_version">
+                    <p style="opacity: 0.8;">user content v1.22.3 <br></p>
+                    <p style="opacity: 0.4;">plywood core v0.0.5</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="info_info_icon">
+                    <div class="infologo">
+                        <a title="Info about Plywood" href=""><i class="fa-solid fa-circle-info"
+                                class="tooltip"></i></a>
+                    </div>
+                </td>
+                <td>
+                    <div class="info_legend">
+                        <ul class='legend-labels'>
+                            <li><span style='background:#ED6A5A;'></span>Header</li>
+                            <li><span style='background:#007AB8;'></span>Normal</li>
+                            <li><span style='background:#A8DCF0;'></span>Dependend</li>
+                        </ul>
+                    </div>
+
+                </td>
+            </tr>
+        </table>
+
     </div>
-
-
-    <!-- TODO: das soll kein Link sein  -->
-    <div class="infologo">
-        <a title="Info about Plywood" href=""><i class="fa-solid fa-circle-info" class="tooltip"
-                style='font-size:36px;'></i></a>
-    </div>
-
-
-    <!-- TODO: Das soll in die Info Hoverbox  -->
-    <!-- <b> Info: </b>
-Normal cells are independent of each other, and can be run togehter with the "Header" cell. <br>
-A "Dependent" cell depends on the "Normal" cell left to it. <br>
-A "Dependent" cell depends on another "Dependent" cell left to it. -->
-
-    <div class="box">
-        <p style="opacity: 0.8;"></p> <tt>user content v1.22.3 </tt><br>
-        <p style="opacity: 0.4;"> <tt> plywood core v0.0.5 </tt> </p>
-    </div>
-
-
-    <div class="box2">
-        <ul class="legend">
-            <li><span class="label1"></span> Header</li>
-            <br>
-            <li><span class="label2"></span> Normal</li>
-            <br>
-            <li><span class="label3"></span> Dependent</li>
-            <br>
-        </ul>
-    </div>
-
     <div style="position: fixed; bottom: 10px; right:10px"> <a href="https://github.com/kolibril13/plywood-gallery">
-            Link to the original plywood core repo.</a></div>
-
+        Link to the original plywood core repo.</a></div>
 </body>
 
 </html>
