@@ -6,34 +6,10 @@
     <script src="https://kit.fontawesome.com/fd8b485006.js" crossorigin="anonymous"></script>
 
     <style>
-        a:link {
-            color: black;
-            background-color: transparent;
-            text-decoration: none;
-        }
-
-        a:visited {
-            color: black;
-            background-color: transparent;
-            text-decoration: none;
-        }
-
-        a:hover {
-            color: grey;
-            background-color: transparent;
-            text-decoration: underline;
-        }
-
-        a:active {
-            color: blue;
-            background-color: transparent;
-            text-decoration: underline;
-        }
-
         .container_info {
             position: absolute;
-            top: 10px;
-            right: 10px;
+            top: 0px;
+            right: 0px;
             width: max-content;
             width: 300px;
             height: 200px;
@@ -41,34 +17,62 @@
             border-color: grey;
         }
 
-        /* .info_github_icon {
-        } */
+        .container_info table {
 
-        .info_version {
-            font-size: 100%;
-
+            border-spacing: 10px 20px;
+            font-family: monospace
         }
 
-        /* .info_info_icon {
-        } */
+        .container_info .info_github_icon {
+            font-size: 36px
+        }
 
+        .container_info .info_version p {
+            margin-bottom: 2.5px;
+            margin-top: 2.5px;
+        }
 
-        .info_legend ul {
+        .container_info .info_info_icon {
+            font-size: 36px
+        }
+
+        .container_info a:link {
+            color: black;
+            background-color: transparent;
+            text-decoration: none;
+        }
+
+        .container_info a:visited {
+            color: black;
+            background-color: transparent;
+            text-decoration: none;
+        }
+
+        .container_info a:hover {
+            color: grey;
+            background-color: transparent;
+            text-decoration: underline;
+        }
+
+        .container_info a:active {
+            color: blue;
+            background-color: transparent;
+            text-decoration: underline;
+        }
+
+        .container_info .info_legend ul {
             margin: 0;
             padding: 0;
             float: left;
             list-style: none;
         }
 
-        .info_legend ul li {
-            font-size: 100%;
-            list-style: none;
+        .container_info .info_legend ul li {
             margin-left: 0;
             line-height: 18px;
-            margin-bottom: 2px;
         }
 
-        .info_legend .legend-labels span {
+        .container_info .info_legend .legend-labels span {
             float: left;
             height: 10px;
             width: 30px;
@@ -77,24 +81,14 @@
             margin-left: 3px;
             border-radius: 4px;
             /* margin-top must be  (info_legend ul li line-height - .info_legend .legend-labels span height) /2  */
-            margin-top: 4px; 
+            margin-top: 4px;
         }
 
-        table,
+        /* .container_info table,
         th,
         td {
             border: 1px solid rgba(255, 0, 0, .3);
-        }
-
-        table {
-            border-spacing: 10px 20px;
-            font-family: monospace
-        }
-
-        .info_version p {
-            margin-bottom: 2.5px;
-            margin-top: 2.5px;
-        }
+        } */
     </style>
 </head>
 
@@ -107,7 +101,7 @@
                     <div class="githublink">
                         <a title="Link to GitHub"
                             href="https://github.com/kolibril13/plywood-gallery-minimal-example"><i class="fa fa-github"
-                                class="tooltip" style='font-size:36px;'></i></a>
+                                class="tooltip"></i></a>
                     </div>
 
                 </td>
@@ -119,8 +113,8 @@
             <tr>
                 <td class="info_info_icon">
                     <div class="infologo">
-                        <a title="Info about Plywood" href=""><i class="fa-solid fa-circle-info" class="tooltip"
-                                style='font-size:36px;'></i></a>
+                        <a title="Info about Plywood" href=""><i class="fa-solid fa-circle-info"
+                                class="tooltip"></i></a>
                     </div>
                 </td>
                 <td>
