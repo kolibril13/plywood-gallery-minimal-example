@@ -99,6 +99,47 @@
             margin-top: 4px;
         }
 
+        .tooltip {
+            position: relative;
+            display: inline-block;
+        }
+
+
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            font-size: small;
+            width: 500px;
+            background-color: white;
+            color: black;
+            text-align: left;
+            border-radius: 6px;
+            padding: 5px 0;
+            position: absolute;
+            z-index: 1;
+            top: 150%;
+            left: 100%;
+            margin-left: -350px;
+            border: 2px solid;
+
+        }
+
+        /* this is the arrow  */
+        .tooltip .tooltiptext::after {
+            content: "";
+            position: absolute;
+            bottom: 100%;
+            /* TODO: calculate  left: 66%;  from  margin-lef at tooltiptextt*/
+            left: 66%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: transparent transparent black transparent;
+        }
+
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+        }
+
         /* .container_info table,
         th,
         td {
@@ -131,10 +172,27 @@
             </tr>
             <tr>
                 <td class="info_info_icon">
-                    <div class="infologo">
-                        <a title="Info about Plywood" href=""><i class="fa-solid fa-circle-info"
-                                class="tooltip"></i></a>
+                    <div class="tooltip">
+                        <div class="infologo">
+                            <i class="fa-solid fa-circle-info"></i>
+                        </div>
+                        <div class="tooltiptext">
+                            <ul>
+                                <li> <strong>Header</strong> cells contain imports and definitions.</li>
+                                <li> <strong>Normal</strong> cells are independent of each other, and can run togehter
+                                    with the <strong>Header</strong> cell.
+                                </li>
+                                <li> A <strong>Dependent</strong> cell depends on the <strong>Normal</strong> cell left
+                                    to it.
+                                </li>
+                                <li> A <strong>Dependent</strong> cell depends on another <strong>Dependent</strong>
+                                    cell left to it.
+                                </li>
+                            </ul>
+
+                        </div>
                     </div>
+
                 </td>
                 <td>
                     <div class="info_legend">
