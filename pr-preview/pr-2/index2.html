@@ -37,7 +37,7 @@
             width: max-content;
             width: 300px;
             height: 200px;
-            border: 2px solid;
+            /* border: 2px solid; */
             border-color: grey;
         }
 
@@ -65,12 +65,52 @@
             border-color: green;
         } */
 
-        /* table,
+        table,
         th,
         td {
             border: 1px solid;
-        } */
-        
+        }
+
+        table {
+            border-spacing:20px 20px;
+        }
+ 
+
+        .info_version p {
+            margin-bottom: 0;
+            margin-top: 0
+        }
+
+        .legend {
+            list-style: none;
+        }
+
+        .legend li {
+            float: left;
+            margin-right: 10px;
+        }
+
+        .legend span {
+            border-radius: 4px;
+            float: left;
+            width: 12px;
+            height: 12px;
+            margin: 2px;
+        }
+
+        /* your colors */
+
+        .legend .label1 {
+            background-color: #ED6A5A;
+        }
+
+        .legend .label2 {
+            background-color: #007AB8;
+        }
+
+        .legend .label3 {
+            background-color: #A8DCF0;
+        }
     </style>
 </head>
 
@@ -89,7 +129,10 @@
                     </div>
 
                 </td>
-                <td class="info_version"> Version</td>
+                <td class="info_version">
+                    <p style="opacity: 0.8;"><tt>user content v1.22.3 </tt><br></p>
+                    <p style="opacity: 0.4;"> <tt> plywood core v0.0.5 </tt> </p>
+                </td>
             </tr>
             <tr>
                 <td class="info_info_icon">
@@ -98,13 +141,20 @@
                                 style='font-size:36px;'></i></a>
                     </div>
                 </td>
-                <td class="info_legend">Legnende</td>
+                <td class="info_legend">
+                    Header <br>
+                    Normal <br>
+                    Dependent <br>
+                </td>
             </tr>
         </table>
 
     </div>
 
     <h2>Add a border to a table:</h2>
+
+
+
 
 
 
