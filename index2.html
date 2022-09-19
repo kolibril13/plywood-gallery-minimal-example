@@ -42,65 +42,63 @@
         }
 
         /* .info_github_icon {
-            border: 2px solid;
-            border-color: blue;
-
-        }
-
-        .info_version {
-            border: 2px solid;
-            border-color: green;
-        }
-
-
-
-        .info_info_icon {
-            border: 2px solid;
-            border-color: blue;
-
-        }
-
-        .info_legend {
-            border: 2px solid;
-            border-color: green;
         } */
 
-        table,
-        th,
-        td {
-            border: 1px solid;
+        .info_version {
+            font-size: 100%;
+
         }
 
-        table {
-            border-spacing:20px 20px;
+        /* .info_info_icon {
+        } */
+
+
+        .info_legend ul {
+            margin: 0;
+            margin-bottom: 0px;
+            padding: 0;
+            float: left;
+            list-style: none;
         }
- 
+
+        .info_legend ul li {
+            font-size: 100%;
+            list-style: none;
+            margin-left: 0;
+            line-height: 18px;
+            margin-bottom: 2px;
+        }
+
+        .info_legend .legend-labels span {
+            display: block;
+            float: left;
+            height: 16px;
+            width: 30px;
+            margin-right: 3px;
+            margin-left: 3px;
+            /* border: 1px solid #999; */
+            border-radius: 4px;
+        }
+
+        /* table,
+        th,
+        td {
+            border: 1px solid rgba(255, 0, 0, .5);
+        } */
+
+        table {
+            border-spacing: 20px 20px;
+        }
+
 
         .info_version p {
             margin-bottom: 0;
             margin-top: 0
         }
-
-
-        /* your colors */
-
-        .legend .label1 {
-            background-color: #ED6A5A;
-        }
-
-        .legend .label2 {
-            background-color: #007AB8;
-        }
-
-        .legend .label3 {
-            background-color: #A8DCF0;
-        }
     </style>
 </head>
 
 <body>
-
-    <h2>Example</h2>
 
     <div class="container_info">
         <table>
@@ -114,7 +112,7 @@
 
                 </td>
                 <td class="info_version">
-                    <p style="opacity: 0.8;"><tt>user content v1.22.3 </tt><br></p>
+                    <p style="opacity: 0.8; font-family:monospace">user content v1.22.3<br></p>
                     <p style="opacity: 0.4;"> <tt> plywood core v0.0.5 </tt> </p>
                 </td>
             </tr>
@@ -126,21 +124,17 @@
                     </div>
                 </td>
                 <td class="info_legend">
-                    Header <br>
-                    Normal <br>
-                    Dependent <br>
+                    <ul class='legend-labels'>
+                        <li><span style='background:#ED6A5A;'></span>Header</li>
+                        <li><span style='background:#007AB8;'></span>Normal</li>
+                        <li><span style='background:#A8DCF0;'></span>Dependend</li>
+                    </ul>
+
                 </td>
             </tr>
         </table>
 
     </div>
-
-    <h2>Add a border to a table:</h2>
-
-
-
-
-
 
 </body>
 
