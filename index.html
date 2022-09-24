@@ -10,29 +10,30 @@
         hljs.highlightAll();
         function display_code_from_gallery_cell(imgs) {
             var name = imgs.dataset.code;
-            document.getElementById("info_field").innerHTML = name
+            document.getElementById("code_snippet").innerHTML = name
             hljs.highlightAll();
         }
         // rest the code content block to an empty paragraph 
         function reset_content(imgs) {
-            document.getElementById("info_field").innerHTML = "<p> <br></p>" //maybe better solution possible?
+            document.getElementById("code_snippet").innerHTML = "<p> <br></p>" //maybe better solution possible?
             hljs.highlightAll();
         }
     </script>
     <style>
         h1,
         h2 {
-            font-family: monospace
-        }
-
-        h1 {
-            margin-bottom: 0;
-            margin-top: 0;
-        }
-
-        h2 {
+            font-family: monospace;
             margin-bottom: 0;
             margin-top: 0
+        }
+
+        .container_code {
+            width: 500px;
+            height: 150px;
+            border: 0;
+            font-size: 10px;
+            position: sticky;
+            top: 0;
         }
 
         p {
@@ -40,17 +41,22 @@
             margin-top: 0
         }
 
-
-
-        .box2 {
-            position: absolute;
-            top: 45px;
-            right: 5px;
+        .container_code .code_content {
+            border-radius: 8px;
+            position: relative;
+            z-index: 100;
+            width: 500px;
         }
 
+        .container_code .close_button {
+            position: absolute;
+            top: 17px;
+            right: -14px;
+            z-index: 400;
 
+        }
 
-        button {
+        .container_code .close_button button {
             border-radius: 4px;
             background-color: lightgrey;
             height: 18px;
@@ -60,34 +66,10 @@
             border-width: 0;
         }
 
-        button:hover {
+        .container_code .close_button button:hover {
             opacity: 0.6;
         }
 
-        .div1 {
-            width: 500px;
-            height: 150px;
-            border: 0;
-            font-size: 10px;
-            position: sticky;
-            top: 0;
-        }
-
-        .block2 {
-            position: absolute;
-            top: 17px;
-            /*TODO button position should not be hard coded*/
-            right: -14px;
-            z-index: 400;
-
-        }
-
-        .python {
-            border-radius: 8px;
-            position: relative;
-            z-index: 100;
-            width: 500px;
-        }
 
         .gallery_entry {
             opacity: 1;
@@ -256,15 +238,13 @@
         <h2>Plywood Gallery - Minimal Example</h2>
     </div>
 
-
-    <div class="div1">
-
+    <div class="container_code">
         <!-- maybe better html indention possible for this pre block?  -->
         <pre>
-<b style="background-color:#ece6e2; ">Code:</b>
-<code class="python" id="info_field"> <br> </code>
+<b>Code:</b>
+<code class="code_content" id="code_snippet"> <br> </code>
 </pre> <!-- better naming of these divs here-->
-        <div class='block2'>
+        <div class='close_button'>
             <button type="button" onclick="reset_content(this)">X</button>
         </div>
     </div>
