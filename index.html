@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/default.min.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script>
+    <script src="https://kit.fontawesome.com/fd8b485006.js" crossorigin="anonymous"></script>
     <script>
         hljs.highlightAll();
         function display_code_from_gallery_cell(imgs) {
@@ -42,7 +43,7 @@
             right: 5px;
         }
 
-      
+
 
         button {
             border-radius: 4px;
@@ -69,7 +70,8 @@
 
         .block2 {
             position: absolute;
-            top: 17px;     /*TODO button position should not be hard coded*/
+            top: 17px;
+            /*TODO button position should not be hard coded*/
             right: -14px;
             z-index: 400;
 
@@ -97,7 +99,146 @@
             opacity: 0.7;
         }
 
+        /* container_info is the top right info section */
 
+        .container_info {
+            position: absolute;
+            top: 0px;
+            right: -40px;
+            width: max-content;
+            width: 300px;
+            height: 200px;
+            /* border: 2px solid; */
+            border-color: grey;
+        }
+
+        .container_info table {
+
+            border-spacing: 10px 20px;
+            font-family: monospace
+        }
+
+        .container_info .info_github_icon {
+            font-size: 36px
+        }
+
+        .container_info .info_version p {
+            margin-bottom: 2.5px;
+            margin-top: 2.5px;
+        }
+
+        .container_info .info_version a {
+            color: black;
+            text-decoration: none;
+        }
+
+        .container_info .info_version a:hover {
+            color: blue;
+            opacity: 0.8;
+        }
+
+
+
+
+
+        .container_info .info_info_icon {
+            font-size: 36px
+        }
+
+        .container_info .githublink a:link {
+            color: black;
+            background-color: transparent;
+            text-decoration: none;
+        }
+
+        .container_info .githublink a:visited {
+            color: black;
+            background-color: transparent;
+            text-decoration: none;
+        }
+
+        .container_info .githublink a:hover {
+            color: grey;
+            background-color: transparent;
+            text-decoration: underline;
+        }
+
+        .container_info .githublink a:active {
+            color: blue;
+            background-color: transparent;
+            text-decoration: underline;
+        }
+
+        .container_info .info_legend ul {
+            margin: 0;
+            padding: 0;
+            float: left;
+            list-style: none;
+        }
+
+        .container_info .info_legend ul li {
+            margin-left: 0;
+            line-height: 18px;
+        }
+
+        .container_info .info_legend .legend-labels span {
+            float: left;
+            height: 10px;
+            width: 30px;
+            /* IMPORTANT spacing on the right */
+            margin-right: 5px;
+            margin-left: 3px;
+            border-radius: 4px;
+            /* margin-top must be  (info_legend ul li line-height - .info_legend .legend-labels span height) /2  */
+            margin-top: 4px;
+        }
+
+        .container_info .tooltip {
+            position: relative;
+            display: inline-block;
+        }
+
+
+        .container_info .tooltip .tooltiptext {
+            visibility: hidden;
+            font-size: small;
+            width: 500px;
+            background-color: white;
+            color: black;
+            text-align: left;
+            border-radius: 6px;
+            padding: 5px 0;
+            position: absolute;
+            z-index: 1;
+            top: 150%;
+            left: 100%;
+            margin-left: -350px;
+            border: 2px solid;
+        }
+
+        /* TODO: The Tooltip has to be refectored*/
+        /* this is the arrow  */
+        .container_info .tooltip .tooltiptext::after {
+            content: "";
+            position: absolute;
+            bottom: 100%;
+            /* TODO: calculate  left: 66%;  from  margin-lef at tooltiptextt*/
+            left: 66%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: transparent transparent black transparent;
+        }
+
+        .container_info .tooltip:hover .tooltiptext {
+            visibility: visible;
+        }
+
+        /* .container_info table,
+        th,
+        td {
+            border: 1px solid rgba(255, 0, 0, .3);
+        } */
     </style>
     <title>Plywood Gallery - Minimal Example</title>
     <link rel="icon" type="image/x-icon" href="plywood_icon.png">
@@ -108,26 +249,16 @@
 <body style="background-color:#ece6e2;">
     <div style="text-align:center">
         <h2>Plywood Gallery - Minimal Example</h2>
-        Repo: <a href=" https://github.com/kolibril13/plywood-gallery-minimal-example">https://github.com/kolibril13/plywood-gallery-minimal-example</a>
     </div>
-    <div> <small>
-            <br>
-            <b> Info: </b>
-            Normal cells are independent of each other, and can be run togehter with the "Header" cell. <br>
-            A "Dependent" cell depends on the "Normal" cell left to it. <br>
-            A "Dependent" cell depends on another "Dependent" cell left to it.
 
-            <br>
-        </small>
-    </div>
 
     <div class="div1">
 
-<!-- maybe better html indention possible for this pre block?  -->
-<pre>
-<b style="background-color:#ece6e2; ">Here is the corresponding code:</b>
+        <!-- maybe better html indention possible for this pre block?  -->
+        <pre>
+<b style="background-color:#ece6e2; ">Code:</b>
 <code class="python" id="info_field"> <br> </code>
-</pre>  <!-- better naming of these divs here-->
+</pre> <!-- better naming of these divs here-->
         <div class='block2'>
             <button type="button" onclick="reset_content(this)">X</button>
         </div>
@@ -154,6 +285,68 @@
             }
         }
     </script>
+
+
+    <div class="container_info">
+        <table>
+            <tr>
+                <td class="info_github_icon">
+                    <div class="tooltip">
+                        <div class="githublink">
+                            <i class="fa fa-github"></i>
+                        </div>
+                        <!-- TODO: This tooltip needs to be adjusted in a better way, should not be hard-coded! -->
+                        <div class="tooltiptext" style="padding:5px; width: 160px; margin-left:-130px">
+                            Links to GitHub repos on the right.
+                        </div>
+                    </div>
+                </td>
+                <td class="info_version">
+                    <p style="opacity: 0.8;"> <a title="Plywood Core at GitHub"
+                            href="https://github.com/kolibril13/plywood-gallery-minimal-example"><span
+                                class="tooltip">user content v1.22.3</span></a><br></p>
+
+                    <p style="opacity: 0.4;"> <a title="Plywood Core at GitHub"
+                            href="https://github.com/kolibril13/plywood-gallery"><span class="tooltip">
+                                plywood core v0.0.5</span></a></p>
+                </td>
+            </tr>
+            <tr>
+                <td class="info_info_icon">
+                    <div class="tooltip">
+                        <div class="infologo">
+                            <i class="fa-solid fa-circle-info"></i>
+                        </div>
+                        <div class="tooltiptext">
+                            <ul>
+                                <li> <strong>Header</strong> cells contain imports and definitions.</li>
+                                <li> <strong>Normal</strong> cells are independent of each other, and can run togehter
+                                    with the <strong>Header</strong> cell.
+                                </li>
+                                <li> A <strong>Dependent</strong> cell depends on the <strong>Normal</strong> cell left
+                                    to it.
+                                </li>
+                                <li> A <strong>Dependent</strong> cell depends on another <strong>Dependent</strong>
+                                    cell left to it.
+                                </li>
+                            </ul>
+
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="info_legend">
+                        <ul class='legend-labels'>
+                            <li><span style='background:#ED6A5A;'></span>Header</li>
+                            <li><span style='background:#007AB8;'></span>Normal</li>
+                            <li><span style='background:#A8DCF0;'></span>Dependent</li>
+                        </ul>
+                    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>‚
 
 
 </body>
