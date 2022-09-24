@@ -27,6 +27,16 @@
             margin-top: 0
         }
 
+        .whole_page {
+            margin: auto;
+            width: 50%;
+            border-left: 3px solid #d6c6bb;
+            border-right: 3px solid #d6c6bb;
+
+            padding: 10px;
+        }
+
+
         .container_code {
             width: 500px;
             height: 150px;
@@ -230,43 +240,46 @@
 </head>
 
 <body style="background-color:#ece6e2;">
-    <div style="text-align:center">
-        <h2>Plywood Gallery - Minimal Example</h2>
-    </div>
 
-    <div class="container_code">
-        <!-- maybe better html indention possible for this pre block?  -->
-        <pre>
+    <div class="whole_page">
+
+        <div style="text-align:center">
+            <h2>Plywood Gallery - Minimal Example</h2>
+        </div>
+
+        <div class="container_code">
+            <!-- maybe better html indention possible for this pre block?  -->
+            <pre>
 <b>Code:</b>
 <code class="python" id="code_snippet"> <br> </code>
 </pre> <!-- better naming of these divs here-->
-        <div class='close_button'>
-            <button type="button" onclick="reset_content(this)">X</button>
+            <div class='close_button'>
+                <button type="button" onclick="reset_content(this)">X</button>
+            </div>
         </div>
-    </div>
 
-    <script>
+        <script>
 
-        let request1 = new XMLHttpRequest();
-        request1.open("GET", "gallery_assets/gallery_parameters.json", false);
-        request1.send(null);
+            let request1 = new XMLHttpRequest();
+            request1.open("GET", "gallery_assets/gallery_parameters.json", false);
+            request1.send(null);
 
-        let jsonData1 = JSON.parse(request1.responseText);
+            let jsonData1 = JSON.parse(request1.responseText);
 
-        for (let key of Object.keys(jsonData1)) {
-            let chapter_of_html = key
-            document.writeln(`<h2> <br> ${chapter_of_html}</h1>`)
+            for (let key of Object.keys(jsonData1)) {
+                let chapter_of_html = key
+                document.writeln(`<h2> <br> ${chapter_of_html}</h1>`)
 
-            let chapter_content = jsonData1[key]
-            for (const chap_element of chapter_content) {
-                let path_of_example = chap_element["image_path"]
-                let codeblock_of_example = chap_element["code"]
-                let css_of_example = chap_element["css"]
-                document.write(`<img src='${path_of_example}' data-code= '${codeblock_of_example}' onclick='display_code_from_gallery_cell(this);' class='gallery_entry' style= '${css_of_example}'>  `);
+                let chapter_content = jsonData1[key]
+                for (const chap_element of chapter_content) {
+                    let path_of_example = chap_element["image_path"]
+                    let codeblock_of_example = chap_element["code"]
+                    let css_of_example = chap_element["css"]
+                    document.write(`<img src='${path_of_example}' data-code= '${codeblock_of_example}' onclick='display_code_from_gallery_cell(this);' class='gallery_entry' style= '${css_of_example}'>  `);
+                }
             }
-        }
-    </script>
-
+        </script>
+    </div>
 
     <div class="container_info">
         <table>
