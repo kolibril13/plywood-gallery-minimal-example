@@ -395,7 +395,7 @@
             let path_of_example = chap_element["image_path"]
             let codeblock_of_example = chap_element["code"]
             let css_of_example = chap_element["css"]
-            image_canvas.insertAdjacentHTML("beforeend", `<img src='${path_of_example}' data-code= '${codeblock_of_example}' onclick='display_code_from_gallery_cell(this);' class='gallery_entry' style= '${css_of_example}'>`);
+            image_canvas.insertAdjacentHTML("beforeend", `<img src='${path_of_example}' loading="lazy" data-code= '${codeblock_of_example}' onclick='display_code_from_gallery_cell(this);' class='gallery_entry' style= '${css_of_example}'>`);
         }
     }
 </script>
