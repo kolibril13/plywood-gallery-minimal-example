@@ -378,24 +378,31 @@
 </body>
 <script>
 
-    let request1 = new XMLHttpRequest();
-    request1.open("GET", "gallery_assets/gallery_parameters.json", false);
-    request1.send(null);
-    let jsonData1 = JSON.parse(request1.responseText);
+    let request = new XMLHttpRequest();
+    request.open("GET", "gallery_assets/gallery_parameters.json", false);
+    request.send(null);
+    let jsonData = JSON.parse(request.responseText);
 
-    const image_canvas = document.getElementById("gallery_container");
+    const gallery_area = document.getElementById("gallery_container");
 
-    for (let key of Object.keys(jsonData1)) {
+    for (let key of Object.keys(jsonData)) {
         let chapter_of_html = key
-        image_canvas.insertAdjacentHTML("beforeend", `<h2> <br> ${chapter_of_html}</h1>`);
+        gallery_area.insertAdjacentHTML("beforeend", `<br> <h2> ${chapter_of_html} </h2>`);
 
 
-        let chapter_content = jsonData1[key]
+        let chapter_content = jsonData[key]
         for (const chap_element of chapter_content) {
             let path_of_example = chap_element["image_path"]
             let codeblock_of_example = chap_element["code"]
             let css_of_example = chap_element["css"]
-            image_canvas.insertAdjacentHTML("beforeend", `<img src='${path_of_example}' loading="lazy" data-code= '${codeblock_of_example}' onclick='display_code_from_gallery_cell(this);' class='gallery_entry' style= '${css_of_example}'>`);
+            gallery_area.insertAdjacentHTML("beforeend",
+                `<img 
+                src ='${path_of_example}'
+                data-code = '${codeblock_of_example}' 
+                style = '${css_of_example}'
+                onclick = 'display_code_from_gallery_cell(this);' 
+                class = 'gallery_entry' 
+                >`);
         }
     }
 </script>
