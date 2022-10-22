@@ -1,7 +1,8 @@
-project_name: Plywood Gallery - Minimal Example
-user_content_version: 1.22.3
-description: Jupyter cell magic that turns images from cell output into a gallery
-favicon: plywood_icon.png # favicon that will be shown in the task bar, prefered resolution: 32x32 pixel. Formats: `.png` or `.ico`.
-preview_image: https://kolibril13.github.io/plywood-gallery-minimal-example/preview_image.png # Gallery thumbnail that is shown in the gallery explorer, prefered resolution:  600x315  Format: `.png` 
-gallery_parameters_path: gallery_assets/gallery_parameters.json
+project_name: Minimal Example
 repository_url: https://github.com/kolibril13/plywood-gallery-minimal-example
+user_content_version: 1.22.3
+description: |
+  Minimal example for plywood gallery cheat sheets
+favicon: icon.png 
+preview_image: https://kolibril13.github.io/plywood-gallery-minimal-example/preview_image.png
+gallery_parameters_path: gallery_assets/gallery_parameters.json
