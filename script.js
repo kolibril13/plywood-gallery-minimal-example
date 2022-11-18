@@ -22,19 +22,17 @@ for (let key of Object.keys(jsonData)) {
     let chapter_of_html = key
     gallery_area.insertAdjacentHTML("beforeend", `<br> <h2> ${chapter_of_html} </h2>`);
 
-
     let chapter_content = jsonData[key]
     for (const chap_element of chapter_content) {
         let path_of_example = chap_element["image_path"]
         let codeblock_of_example = chap_element["code"]
         let css_of_example = chap_element["css"]
-        // gallery_area.insertAdjacentHTML("beforeend",
-        //     `<img 
-        //         src ='${path_of_example}'
-        //         data-code = '${codeblock_of_example}' 
-        //         style = '${css_of_example}'
-        //         onclick = 'display_code_from_gallery_cell(this);' 
-        //         class = 'gallery_entry' 
-        //         >`);
+
+        var template_entry = document.getElementById("gallery-item-template");
+        var my_entry = template_entry.content.cloneNode(true);
+        my_entry.querySelector(".gallery_entry").style = css_of_example;
+        my_entry.querySelector(".gallery_entry").src = path_of_example;
+        my_entry.querySelector(".gallery_entry").dataset.code = codeblock_of_example;
+        gallery_area.appendChild(my_entry);
     }
 }
