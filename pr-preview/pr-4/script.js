@@ -20,7 +20,11 @@ const gallery_area = document.getElementById("gallery_container");
 
 for (let key of Object.keys(jsonData)) {
     let chapter_of_html = key
-    gallery_area.insertAdjacentHTML("beforeend", `<br> <h2> ${chapter_of_html} </h2>`);
+    var template_heading = document.getElementById("heading-template");
+    var my_heading = template_heading.content.cloneNode(true);
+    my_heading.querySelector(".my_heading_whatelse").innerHTML = chapter_of_html;
+    gallery_area.appendChild(my_heading);
+
 
     let chapter_content = jsonData[key]
     for (const chap_element of chapter_content) {
