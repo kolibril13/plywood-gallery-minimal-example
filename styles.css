@@ -1,0 +1,241 @@
+
+h1,
+h2 {
+    font-family: monospace;
+    margin-bottom: 0;
+    margin-top: 0
+}
+
+.whole_page {
+    margin: auto;
+    width: 700px;
+    border-left: 3px solid #d6c6bb;
+    border-right: 3px solid #d6c6bb;
+
+    padding: 10px;
+}
+
+
+
+.container_code {
+    position: relative;
+    width: 600px;
+    height: 1px;
+    /* there is probably a better way to do this  */
+    border: 0;
+    z-index: 2;
+    font-size: 10px;
+    position: sticky;
+    top: 0;
+
+}
+
+/* .python can not be renamed because of highlight.js */
+.container_code .python {
+    border-radius: 8px;
+    position: relative;
+    z-index: 2;
+    width: 600px;
+}
+
+.container_code .close_button {
+    position: absolute;
+    top: 17px;
+    right: -14px;
+    z-index: 3;
+
+}
+
+.container_code .close_button button {
+    border-radius: 4px;
+    background-color: lightgrey;
+    height: 18px;
+    width: 18px;
+    padding: 0px;
+    z-index: 3;
+    border-width: 0;
+}
+
+.container_code .close_button button:hover {
+    opacity: 0.6;
+}
+
+/* .gallery_container{
+} */
+
+.gallery_entry {
+    opacity: 1;
+    display: inline-block;
+    width: 80px;
+    height: auto;
+    margin: 3px;
+    vertical-align: middle;
+    transition: .1s ease;
+    backface-visibility: hidden;
+    border-radius: 8px;
+}
+
+.gallery_entry:hover {
+    opacity: 0.7;
+}
+
+/* container_info is the top right info section */
+
+.container_info {
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    width: max-content;
+    width: 300px;
+    height: 200px;
+    /* border: 2px solid; */
+    border-color: grey;
+}
+
+.container_info table {
+
+    border-spacing: 10px 20px;
+    font-family: monospace
+}
+
+.container_info .info_github_icon {
+    font-size: 36px
+}
+
+.container_info .info_version p {
+    margin-bottom: 2.5px;
+    margin-top: 2.5px;
+}
+
+.container_info .info_version a {
+    color: black;
+    text-decoration: none;
+}
+
+.container_info .info_version a:hover {
+    color: blue;
+    opacity: 0.8;
+}
+
+.container_info .info_info_icon {
+    font-size: 36px
+}
+
+.container_info .githublink a:link {
+    color: black;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+.container_info .githublink a:visited {
+    color: black;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+.container_info .githublink a:hover {
+    color: grey;
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+.container_info .githublink a:active {
+    color: blue;
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+.container_info .info_legend ul {
+    margin: 0;
+    padding: 0;
+    float: left;
+    list-style: none;
+}
+
+.container_info .info_legend ul li {
+    margin-left: 0;
+    line-height: 18px;
+}
+
+.container_info .info_legend .legend-labels span {
+    float: left;
+    height: 10px;
+    width: 30px;
+    /* IMPORTANT spacing on the right */
+    margin-right: 5px;
+    margin-left: 3px;
+    border-radius: 4px;
+    /* margin-top must be  (info_legend ul li line-height - .info_legend .legend-labels span height) /2  */
+    margin-top: 4px;
+}
+
+.container_info .tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+
+.container_info .tooltip .tooltiptext {
+    visibility: hidden;
+    font-size: small;
+    width: 500px;
+    background-color: white;
+    color: black;
+    text-align: left;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    top: 150%;
+    left: 100%;
+    margin-left: -350px;
+    border: 2px solid;
+}
+
+/* TODO: The Tooltip has to be refectored*/
+/* this is the arrow  */
+.container_info .tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    /* TODO: calculate  left: 66%;  from  margin-lef at tooltiptextt*/
+    left: 66%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent black transparent;
+}
+
+.container_info .tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
+
+@media (max-width: 1200px) {
+    .container_info {
+        position: static;
+    }
+
+
+
+}
+
+/* TODO: This should be done with a smooth transition. */
+@media (max-width: 750px) {
+    .whole_page {
+        width: 95%;
+    }
+}
+
+/* TODO: This should be done with a smooth transition. */
+@media (max-width: 680px) {
+
+    .container_code {
+        width: 97%;
+    }
+
+    .container_code .python {
+        width: 100%;
+        ;
+    }
+}
