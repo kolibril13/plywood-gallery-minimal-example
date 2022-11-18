@@ -22,7 +22,7 @@ for (let key of Object.keys(jsonData)) {
     let chapter_of_html = key
     var template_heading = document.getElementById("heading-template");
     var my_heading = template_heading.content.cloneNode(true);
-    my_heading.querySelector(".my_heading_whatelse").innerHTML = chapter_of_html;
+    my_heading.querySelector("h2").innerHTML = chapter_of_html;
     gallery_area.appendChild(my_heading);
 
 
