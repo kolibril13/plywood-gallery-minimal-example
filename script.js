@@ -28,13 +28,13 @@ for (let key of Object.keys(jsonData)) {
         let path_of_example = chap_element["image_path"]
         let codeblock_of_example = chap_element["code"]
         let css_of_example = chap_element["css"]
-        gallery_area.insertAdjacentHTML("beforeend",
-            `<img 
-                src ='${path_of_example}'
-                data-code = '${codeblock_of_example}' 
-                style = '${css_of_example}'
-                onclick = 'display_code_from_gallery_cell(this);' 
-                class = 'gallery_entry' 
-                >`);
+        // gallery_area.insertAdjacentHTML("beforeend",
+        //     `<img 
+        //         src ='${path_of_example}'
+        //         data-code = '${codeblock_of_example}' 
+        //         style = '${css_of_example}'
+        //         onclick = 'display_code_from_gallery_cell(this);' 
+        //         class = 'gallery_entry' 
+        //         >`);
     }
 }

@@ -42,6 +42,7 @@
 
     <div class="whole_page">
 
+
         <div style="text-align:center">
             <h2>Minimal Example</h2>
         </div>
@@ -63,7 +64,6 @@
         <div id="gallery_container"></div>
         <div class="container_info">
             <table>
-               
                 <tr>
                     <td class="info_github_icon">
                         <div class="tooltip">
@@ -145,6 +145,69 @@
     </div>
 
 </body>
+
+
+<div id="bar" style="border: 7px solid rgb(51, 140, 255); height: 200px; width: 300px;"> 
+<ul id="list">
+    <li>
+        <span>Item 1: </span>
+        <span>Content 1</span>
+    </li>
+    <li>
+        <span>Item 2: </span>
+        <span>Content 2</span>
+    </li>
+</ul>
+<!-- <button id="add-item">Add Item</button> -->
+</div>
+<template id="list-item-template">
+    <li>
+        <span class="title">Item: </span>
+        <span class="content">Content</span>
+    </li>
+</template>
+
+
+<div id="foo" style="border: 7px solid rgb(54, 243, 161); height: 300px; width: 300px;"> </div>
+
+
+<template id="gallery-item-template">
+    <h5>Flower</h5>
+    <img class="img_tempXXX" src='preview_image.png' data-code='' onclick='display_code_from_gallery_cell(this);' class='gallery_entry'>`
+</template>
+
+<script>
+    var temp = document.getElementById("gallery-item-template");
+    var clon = temp.content.cloneNode(true);
+    clon.querySelector(".img_tempXXX").style ="width:40px;";
+    const cloneXXX = clon.cloneNode(true);
+
+    document.body.appendChild(clon);
+    const foo = document.getElementById("foo");
+    foo.appendChild(cloneXXX)
+
+
+    // const template = document.getElementById('list-item-template')[0];
+    // const item = template.content.cloneNode(true)
+    // foo.insertAdjacentHTML("beforeend", item);
+    // document.writeln(item);
+    // document.body.appendChild(item.content);
+    // document.body.appendChild(item);
+    // document.body.appendChild(item);
+    // document.body.appendChild(<div>"hello"</div>);
+
+    const templateX = document.getElementById('list-item-template')
+    const list = document.getElementById('list')
+    let itemCount = list.children.length
+    const itemX = templateX.content.cloneNode(true)
+    itemCount++
+    itemX.querySelector('.title').innerText = `Item ${itemCount}: `
+    itemX.querySelector('.content').innerText = `Content ${itemCount}`
+    list.append(itemX)
+
+    // })
+</script>
+
 
 
 </html>
