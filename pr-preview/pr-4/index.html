@@ -147,66 +147,15 @@
 </body>
 
 
-<div id="bar" style="border: 7px solid rgb(51, 140, 255); height: 200px; width: 300px;"> 
-<ul id="list">
-    <li>
-        <span>Item 1: </span>
-        <span>Content 1</span>
-    </li>
-    <li>
-        <span>Item 2: </span>
-        <span>Content 2</span>
-    </li>
-</ul>
-<!-- <button id="add-item">Add Item</button> -->
-</div>
-<template id="list-item-template">
-    <li>
-        <span class="title">Item: </span>
-        <span class="content">Content</span>
-    </li>
-</template>
-
-
-<div id="foo" style="border: 7px solid rgb(54, 243, 161); height: 300px; width: 300px;"> </div>
 
 
 <template id="gallery-item-template">
-    <img  src='preview_image.png' data-code='' onclick='display_code_from_gallery_cell(this);' class='gallery_entry'>
+    <img  src='' data-code='' style='width: auto;' onclick='display_code_from_gallery_cell(this);' class='gallery_entry'>
 </template>
 
-<script>
-    // var template_entry = document.getElementById("gallery-item-template");
-    // var clon = template_entry.content.cloneNode(true);
-    // clon.querySelector(".img_tempXXX").style ="width:40px;";
-    // const clonecopy = clon.cloneNode(true);
-    
-    // const foo = document.getElementById("foo");
-    // foo.appendChild(clon)
-    
-    // document.body.appendChild(clonecopy);
+<template id="heading-template">
+    <span><br> <h2 class="my_heading_whatelse"></h2> </span>
 
-    // const template = document.getElementById('list-item-template')[0];
-    // const item = template.content.cloneNode(true)
-    // foo.insertAdjacentHTML("beforeend", item);
-    // document.writeln(item);
-    // document.body.appendChild(item.content);
-    // document.body.appendChild(item);
-    // document.body.appendChild(item);
-    // document.body.appendChild(<div>"hello"</div>);
-
-    const templateX = document.getElementById('list-item-template')
-    const list = document.getElementById('list')
-    let itemCount = list.children.length
-    const itemX = templateX.content.cloneNode(true)
-    itemCount++
-    itemX.querySelector('.title').innerText = `Item ${itemCount}: `
-    itemX.querySelector('.content').innerText = `Content ${itemCount}`
-    list.append(itemX)
-
-    // })
-</script>
-
-
+</template>
 
 </html>
