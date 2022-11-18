@@ -172,20 +172,19 @@
 
 
 <template id="gallery-item-template">
-    <h5>Flower</h5>
-    <img class="img_tempXXX" src='preview_image.png' data-code='' onclick='display_code_from_gallery_cell(this);' class='gallery_entry'>`
+    <img  src='preview_image.png' data-code='' onclick='display_code_from_gallery_cell(this);' class='gallery_entry'>
 </template>
 
 <script>
-    var temp = document.getElementById("gallery-item-template");
-    var clon = temp.content.cloneNode(true);
-    clon.querySelector(".img_tempXXX").style ="width:40px;";
-    const cloneXXX = clon.cloneNode(true);
-
-    document.body.appendChild(clon);
-    const foo = document.getElementById("foo");
-    foo.appendChild(cloneXXX)
-
+    // var template_entry = document.getElementById("gallery-item-template");
+    // var clon = template_entry.content.cloneNode(true);
+    // clon.querySelector(".img_tempXXX").style ="width:40px;";
+    // const clonecopy = clon.cloneNode(true);
+    
+    // const foo = document.getElementById("foo");
+    // foo.appendChild(clon)
+    
+    // document.body.appendChild(clonecopy);
 
     // const template = document.getElementById('list-item-template')[0];
     // const item = template.content.cloneNode(true)
