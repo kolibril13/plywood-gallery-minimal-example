@@ -61,7 +61,19 @@
             <br><br><br><br><br><br><br><br>
             <!-- TODO This can be done better with a fixed length -->
         </div>
-        <div id="gallery_container"></div>
+        <div id="gallery_container">
+            <template id="gallery-item-template">
+                <img class='gallery_entry' src='' data-code='' style='width: auto;'
+                    onclick='display_code_from_gallery_cell(this);'>
+            </template>
+
+            <template id="heading-template">
+                <span><br>
+                    <h2></h2>
+                </span>
+
+            </template>
+        </div>
         <div class="container_info">
             <table>
                 <tr>
@@ -100,7 +112,7 @@
                     </td>
                     <td>
                         <div>
-                            <input type="text">
+                            <input type="search" id="search">
                         </div>
                     </td>
                 </tr>
@@ -148,16 +160,5 @@
 
 
 
-
-<template id="gallery-item-template">
-    <img class='gallery_entry' src='' data-code='' style='width: auto;' onclick='display_code_from_gallery_cell(this);'>
-</template>
-
-<template id="heading-template">
-    <span><br>
-        <h2></h2>
-    </span>
-
-</template>
 
 </html>
