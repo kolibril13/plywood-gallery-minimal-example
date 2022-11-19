@@ -18,6 +18,7 @@ jsonData = json_content_all["plywood_content"]
 
 const gallery_area = document.getElementById("gallery_container");
 
+users = []
 for (let key of Object.keys(jsonData)) {
     let chapter_of_html = key
     var template_heading = document.getElementById("heading-template");
@@ -35,8 +36,38 @@ for (let key of Object.keys(jsonData)) {
         var template_entry = document.getElementById("gallery-item-template");
         var my_entry = template_entry.content.cloneNode(true);
         my_entry.querySelector(".gallery_entry").style = css_of_example;
+        // my_entry.querySelector(".gallery_entry").style = "width:20px";
         my_entry.querySelector(".gallery_entry").src = path_of_example;
         my_entry.querySelector(".gallery_entry").dataset.code = codeblock_of_example;
         gallery_area.appendChild(my_entry);
+        users.push({ name: codeblock_of_example, element: my_entry })
     }
 }
+
+
+console.log(users)
+
+users.forEach(user => {
+    user.name = "Hello World"
+    user.element.querySelector(".gallery_entry").style = "width:20px";
+})
+
+console.log(users)
+
+// const searchInput = document.querySelector("[data-search]")
+
+// searchInput.addEventListener("input", e => {
+//     const value = e.target.value.toLowerCase()
+//     console.log(value)
+//     console.log(users)
+
+//     users.forEach(user => {
+//         const isVisible = user.name.toLowerCase().includes(value)
+//         console.log(isVisible)
+//         // user.element.classList.toggle("hide", !isVisible)
+//         if (!isVisible) { 
+            
+//             // user.element.querySelector(".gallery_entry").style ="height:20px;";
+//           }
+//     })
+// })
