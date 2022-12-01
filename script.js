@@ -57,7 +57,7 @@ searchInput.addEventListener("input", e => {
         const isVisible = user.name.toLowerCase().includes(value)
         console.log(isVisible)
         if (!isVisible) {
-            user.img.style = "height:1px;";
+            user.img.style = "opacity:0.1";
         }
         if (isVisible) {
             user.img.style = user.img.ref_style;
