@@ -46,12 +46,6 @@ for (let key of Object.keys(jsonData)) {
     }
 }
 
-
-console.log(users)
-
-
-
-
 const searchInput = document.querySelector("[data-search]")
 
 searchInput.addEventListener("input", e => {
@@ -62,15 +56,14 @@ searchInput.addEventListener("input", e => {
     users.forEach(user => {
         const isVisible = user.name.toLowerCase().includes(value)
         console.log(isVisible)
-        // user.img.toggle("hide", !isVisible)
-        if (!isVisible) { 
-            user.img.style ="height:1px;";
-          }
-        if (isVisible) { 
+        if (!isVisible) {
+            user.img.style = "height:1px;";
+        }
+        if (isVisible) {
             user.img.style = user.img.ref_style;
-        // user.img.style ="height:200px" // this line would have a nice folding effect
+            // user.img.style ="height:200px" // this line would have a nice folding effect
 
-        } 
+        }
 
 
     })
