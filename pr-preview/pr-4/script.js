@@ -37,6 +37,7 @@ for (let key of Object.keys(jsonData)) {
         var my_entry = template_entry.content.cloneNode(true);
         let my_img = my_entry.querySelector(".gallery_entry") // why this?
         my_img.style = css_of_example;
+        my_img.ref_style = css_of_example;
         my_img.src = path_of_example;
         my_img.dataset.code = codeblock_of_example;
         gallery_area.appendChild(my_img);
@@ -61,12 +62,16 @@ searchInput.addEventListener("input", e => {
     users.forEach(user => {
         const isVisible = user.name.toLowerCase().includes(value)
         console.log(isVisible)
-        // user.element.classList.toggle("hide", !isVisible)
+        // user.img.toggle("hide", !isVisible)
         if (!isVisible) { 
             user.img.style ="height:1px;";
           }
         if (isVisible) { 
-            user.img.style ="height: 100px;";
+            user.img.style = user.img.ref_style;
+        // user.img.style ="height:200px" // this line would have a nice folding effect
+
         } 
+
+
     })
 })
