@@ -1,52 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta name="viewport" content="width=device-width">
-
-    <!-- HTML Meta Tags -->
-    <title>Minimal Example</title>
-    <meta name="description" content="Minimal example for plywood gallery cheat sheets
-">
-
-
-    <!-- OpenGraph Meta Tags -->
-    <meta property="og:url" content="https://github.com/kolibril13/plywood-gallery-minimal-example">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Minimal Example">
-    <meta property="og:description" content="Minimal example for plywood gallery cheat sheets
-">
-    <meta property="og:image" content="https://kolibril13.github.io/plywood-gallery-minimal-example/preview_image.png">
-
-    <!-- Twitter Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta property="twitter:domain" content="kolibril13.github.io">
-    <meta property="twitter:url" content="https://github.com/kolibril13/plywood-gallery-minimal-example">
-    <meta name="twitter:title" content="Minimal Example">
-    <meta name="twitter:description" content="Minimal example for plywood gallery cheat sheets
-">
-    <meta name="twitter:image" content="https://kolibril13.github.io/plywood-gallery-minimal-example/preview_image.png">
-
-    <!-- Meta Tags Generated via https://www.opengraph.xyz -->
-
-    <link rel="icon" type="image/x-icon" href="icon.png">
-    <!-- the original plywood icon is dedicated to the Marble Machine X by Wintergatan https://youtu.be/JgM2ruB8M34?t=614 -->
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/default.min.css">
-    <link rel="stylesheet" href="styles.css">
-    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script>
-    <script src="https://kit.fontawesome.com/fd8b485006.js" crossorigin="anonymous"></script>
-    <script src="script.js" defer></script>
+<!-- the original plywood icon is dedicated to the Marble Machine X by Wintergatan https://youtu.be/JgM2ruB8M34?t=614 -->
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/default.min.css">
+<link rel="stylesheet" href="styles.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script>
+<script src="https://kit.fontawesome.com/fd8b485006.js" crossorigin="anonymous"></script>
+<script src="script.js" defer></script>
 </head>
 
 <body style="background-color:#ece6e2;">
-
     <div class="whole_page">
-
-
-        <div style="text-align:center">
-            <h2>Minimal Example</h2>
-        </div>
-
         <div class="container_code">
             <!-- maybe better html indention possible for this pre block?  -->
             <pre>
@@ -58,107 +20,23 @@
             </div>
         </div>
         <div>
-            <br><br><br><br><br><br><br><br>
-            <!-- TODO This can be done better with a fixed length -->
         </div>
         <div id="gallery_container">
-            <template id="gallery-item-template">
+            <template gallery-item-template>
                 <img class='gallery_entry' src='' data-code='' style='width: auto;'
                     onclick='display_code_from_gallery_cell(this);'>
             </template>
 
-            <template id="heading-template">
+            <template heading-template>
                 <span><br>
                     <h2></h2>
                 </span>
 
             </template>
         </div>
-        <div class="container_info">
-            <table>
-                <tr>
-                    <td class="info_github_icon">
-                        <div class="tooltip">
-                            <div class="githublink">
-                                <i class="fa fa-github"></i>
-                            </div>
-                            <!-- TODO: This tooltip needs to be adjusted in a better way, should not be hard-coded! -->
-                            <div class="tooltiptext" style="padding:5px; width: 160px; margin-left:-130px">
-                                Links to GitHub repos on the right.
-                            </div>
-                        </div>
-                    </td>
-                    <td class="info_version">
-                        <p style="opacity: 0.8;"> <a title="Plywood Core at GitHub"
-                                href="https://github.com/kolibril13/plywood-gallery-minimal-example"><span
-                                    class="tooltip">user content v1.22.3 </span></a><br></p>
-
-                        <p style="opacity: 0.4;"> <a title="Plywood Core at GitHub"
-                                href="https://github.com/kolibril13/plywood-gallery"><span class="tooltip">
-                                    plywood core v0.0.9</span></a></p>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="info_search_icon">
-                        <div class="tooltip">
-                            <div class="githublink">
-                                <i class="fa fa-search"></i>
-                            </div>
-                            <!-- TODO: This tooltip needs to be adjusted in a better way, should not be hard-coded! -->
-                            <div class="tooltiptext" style="padding:5px; width: 160px; margin-left:-130px">
-                                Search for Keywords in Gallery.
-                            </div>
-                        </div>
-                    </td>
-                    <td>
-                        <div>
-                            <input type="search" id="search" data-search>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="info_info_icon">
-                        <div class="tooltip">
-                            <div class="infologo">
-                                <i class="fa-solid fa-circle-info"></i>
-                            </div>
-                            <div class="tooltiptext">
-                                <ul>
-                                    <li> <strong>Header</strong> cells contain imports and definitions.</li>
-                                    <li> <strong>Normal</strong> cells are independent of each other, and can run
-                                        togehter
-                                        with the <strong>Header</strong> cell.
-                                    </li>
-                                    <li> A <strong>Dependent</strong> cell depends on the <strong>Normal</strong> cell
-                                        left
-                                        to it.
-                                    </li>
-                                    <li> A <strong>Dependent</strong> cell depends on another <strong>Dependent</strong>
-                                        cell left to it.
-                                    </li>
-                                </ul>
-
-                            </div>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="info_legend">
-                            <ul class='legend-labels'>
-                                <li><span style='background:#ED6A5A;'></span>Header</li>
-                                <li><span style='background:#007AB8;'></span>Normal</li>
-                                <li><span style='background:#A8DCF0;'></span>Dependent</li>
-                            </ul>
-                        </div>
-
-                    </td>
-                </tr>
-            </table>
+        <div>
+            <input type="search" id="search" data-search>
         </div>
-    </div>
-
 </body>
-
-
-
 
 </html>
