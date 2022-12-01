@@ -3,13 +3,10 @@
 
 <head>
     <meta name="viewport" content="width=device-width">
-
     <!-- HTML Meta Tags -->
     <title>Minimal Example</title>
     <meta name="description" content="Minimal example for plywood gallery cheat sheets
 ">
-
-
     <!-- OpenGraph Meta Tags -->
     <meta property="og:url" content="https://github.com/kolibril13/plywood-gallery-minimal-example">
     <meta property="og:type" content="website">
@@ -17,7 +14,6 @@
     <meta property="og:description" content="Minimal example for plywood gallery cheat sheets
 ">
     <meta property="og:image" content="https://kolibril13.github.io/plywood-gallery-minimal-example/preview_image.png">
-
     <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta property="twitter:domain" content="kolibril13.github.io">
@@ -26,9 +22,7 @@
     <meta name="twitter:description" content="Minimal example for plywood gallery cheat sheets
 ">
     <meta name="twitter:image" content="https://kolibril13.github.io/plywood-gallery-minimal-example/preview_image.png">
-
     <!-- Meta Tags Generated via https://www.opengraph.xyz -->
-
     <link rel="icon" type="image/x-icon" href="icon.png">
     <!-- the original plywood icon is dedicated to the Marble Machine X by Wintergatan https://youtu.be/JgM2ruB8M34?t=614 -->
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/default.min.css">
@@ -38,14 +32,13 @@
     <script src="script.js" defer></script>
 </head>
 
+
+
 <body style="background-color:#ece6e2;">
-
     <div class="whole_page">
-
         <div style="text-align:center">
             <h2>Minimal Example</h2>
         </div>
-
         <div class="container_code">
             <!-- maybe better html indention possible for this pre block?  -->
             <pre>
@@ -60,10 +53,21 @@
             <br><br><br><br><br><br><br><br>
             <!-- TODO This can be done better with a fixed length -->
         </div>
-        <div id="gallery_container"></div>
+        <div id="gallery_container">
+            <template gallery-item-template>
+                <img class='gallery_entry' src='' data-code='' style='width: auto;'
+                    onclick='display_code_from_gallery_cell(this);'>
+            </template>
+
+            <template heading-template>
+                <span><br>
+                    <h2></h2>
+                </span>
+
+            </template>
+        </div>
         <div class="container_info">
             <table>
-               
                 <tr>
                     <td class="info_github_icon">
                         <div class="tooltip">
@@ -80,7 +84,6 @@
                         <p style="opacity: 0.8;"> <a title="Plywood Core at GitHub"
                                 href="https://github.com/kolibril13/plywood-gallery-minimal-example"><span
                                     class="tooltip">user content v1.22.3 </span></a><br></p>
-
                         <p style="opacity: 0.4;"> <a title="Plywood Core at GitHub"
                                 href="https://github.com/kolibril13/plywood-gallery"><span class="tooltip">
                                     plywood core v0.0.9</span></a></p>
@@ -100,7 +103,7 @@
                     </td>
                     <td>
                         <div>
-                            <input type="text">
+                            <input type="search" id="search" data-search>
                         </div>
                     </td>
                 </tr>
@@ -125,7 +128,6 @@
                                         cell left to it.
                                     </li>
                                 </ul>
-
                             </div>
                         </div>
                     </td>
@@ -137,13 +139,11 @@
                                 <li><span style='background:#A8DCF0;'></span>Dependent</li>
                             </ul>
                         </div>
-
                     </td>
                 </tr>
             </table>
         </div>
     </div>
-
 </body>
 
 
