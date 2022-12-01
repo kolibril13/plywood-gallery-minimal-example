@@ -18,14 +18,13 @@ jsonData = json_content_all["plywood_content"]
 
 const gallery_area = document.getElementById("gallery_container");
 
-users = []
+plywood_entries = []
 for (let key of Object.keys(jsonData)) {
     let chapter_of_html = key
     var template_heading = document.querySelector("[heading-template]");
     var my_heading = template_heading.content.cloneNode(true);
     my_heading.querySelector("h2").innerHTML = chapter_of_html;
     gallery_area.appendChild(my_heading);
-
 
     let chapter_content = jsonData[key]
     for (const chap_element of chapter_content) {
@@ -41,7 +40,7 @@ for (let key of Object.keys(jsonData)) {
         my_img.src = path_of_example;
         my_img.dataset.code = codeblock_of_example;
         gallery_area.appendChild(my_img);
-        users.push({ name: codeblock_of_example, img: my_img })
+        plywood_entries.push({ codesnip: codeblock_of_example, img: my_img })
 
     }
 }
@@ -50,18 +49,16 @@ const searchInput = document.querySelector("[data-search]")
 
 searchInput.addEventListener("input", e => {
     const value = e.target.value.toLowerCase()
-    console.log(value)
-    console.log(users)
 
-    users.forEach(user => {
-        const isVisible = user.name.toLowerCase().includes(value)
+    plywood_entries.forEach(pw_entry => {
+        const isVisible = pw_entry.codesnip.toLowerCase().includes(value)
         console.log(isVisible)
         if (!isVisible) {
-            user.img.style = "opacity:0.1";
+            pw_entry.img.style = "opacity:0.1";
         }
         if (isVisible) {
-            user.img.style = user.img.ref_style;
-            // user.img.style ="height:200px" // this line would have a nice folding effect
+            pw_entry.img.style = pw_entry.img.ref_style;
+            // pw_entry.img.style ="height:200px" // this line would have a nice folding effect
 
         }
 
